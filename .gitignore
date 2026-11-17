@@ -1,0 +1,6 @@
+# 本机与工具产物
+.DS_Store
+*.out
+coverage*
+.idea/
+.vscode/
