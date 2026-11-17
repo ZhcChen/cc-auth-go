@@ -44,12 +44,12 @@
 ## 开发与验证
 
 - 本机只做编辑、格式化和纯文本检查；不在本机执行 `go build`、`go test`、`go mod tidy`。
-- 测试在 GitHub Actions 运行（`.github/workflows/test.yml`：vet、单元测试、`-race`、`go mod tidy -diff`）；推送后用 `gh run watch` / `gh run view --log-failed` 查看结果。
-- `go.mod`、`go.sum` 的变更以 CI 中 `go mod tidy -diff` 输出为准回填，不手编哈希。
+- 检查与测试在远端开发主机 qfy-test2 运行：`make test`（格式、`go mod tidy -diff`、vet、单元、竞态）、`make bench`（基准）、`make tidy`（远端 `go mod tidy` 并取回 `go.mod`、`go.sum`）。实现见 `scripts/dev/remote.sh`：同步工作区到 `/opt/qfy-dev/<库名>/<分支键>/`，用一次性容器执行，只接入 `dev-shared-network`，不发布端口，同一分支串行。不使用 GitHub Actions。
+- `go.mod`、`go.sum` 只用 `make tidy` 生成，不手编。
 - 汇报验证结果时区分通过、失败、跳过、未覆盖；没跑过的写“未验证”。
 
 ## 发布
 
 - 用 Git 标签发布（`vX.Y.Z`）；使用方接入调试期间用预发布标签（`v0.1.0-alpha.N`）。
-- 打标签前 CI 必须全绿；独立 module 的标签带目录前缀（如 `ginauth/v0.1.0`）。
+- 打标签前 `make test` 必须通过；独立 module 的标签带目录前缀（如 `ginauth/v0.1.0`）。
 - 标签一经推送不得删除或移动；有问题发新版本。
