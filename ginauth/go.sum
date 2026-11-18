@@ -1,3 +1,5 @@
+github.com/ZhcChen/cc-auth-go v0.1.0-alpha.1 h1:8AxoIHiEdm0uPSSXs3DW/r6RePm6DZSVa4qQhhyYfG8=
+github.com/ZhcChen/cc-auth-go v0.1.0-alpha.1/go.mod h1:q7FdQg1xPWLC7zb6LpIyLHvaGvk/GW2PPV7J1VoDAyg=
 github.com/bytedance/sonic v1.14.0 h1:/OfKt8HFw0kh2rj8N0F6C/qPGRESq0BbaNZgcNXXzQQ=
 github.com/bytedance/sonic v1.14.0/go.mod h1:WoEbx8WTcFJfzCe0hbmyTGrfjt8PzNEBdxlNUO24NhA=
 github.com/bytedance/sonic/loader v0.3.0 h1:dskwH8edlzNMctoruo8FPTJDF3vLtDT0sXZwvZJyqeA=

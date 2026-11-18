@@ -3,7 +3,7 @@ module github.com/ZhcChen/cc-auth-go/ginauth
 go 1.26.0
 
 require (
-	github.com/ZhcChen/cc-auth-go v0.0.0-00010101000000-000000000000
+	github.com/ZhcChen/cc-auth-go v0.1.0-alpha.1
 	github.com/gin-gonic/gin v1.11.0
 )
 
@@ -40,6 +40,3 @@ require (
 	golang.org/x/tools v0.52.0 // indirect
 	google.golang.org/protobuf v1.36.9 // indirect
 )
-
-// 同仓库开发时引用上级目录；发布后改为依赖已打标签的版本。
-replace github.com/ZhcChen/cc-auth-go => ../
